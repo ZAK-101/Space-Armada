@@ -14,6 +14,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Bounds for the player
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -4.975f, 4.975f), Mathf.Clamp(transform.position.y, -4.689f, 4.689f));
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -10.5f, 10.5f), Mathf.Clamp(transform.position.y, -8.52f, -8.52f));
     }
 }
