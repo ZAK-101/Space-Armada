@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 309165225}
   - component: {fileID: 309165224}
   m_Layer: 0
-  m_Name: Invaders
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,15 +152,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8a9f7bde6a5ad41ac5d727de04ed74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 5
-  columns: 11
   invaderPrefabs:
-  - {fileID: 1685911328953512326, guid: 050cbff429c3e4349a2d70c692094dbc, type: 3}
-  - {fileID: 1685911328953512326, guid: 050cbff429c3e4349a2d70c692094dbc, type: 3}
-  - {fileID: 1685911328953512326, guid: 050cbff429c3e4349a2d70c692094dbc, type: 3}
-  - {fileID: 1685911328953512326, guid: 050cbff429c3e4349a2d70c692094dbc, type: 3}
-  - {fileID: 1685911328953512326, guid: 050cbff429c3e4349a2d70c692094dbc, type: 3}
+  - {fileID: 3436384952035452357, guid: bacbfcc701fc884439fbd1aa9f0b2387, type: 3}
+  - {fileID: 3436384952035452357, guid: bacbfcc701fc884439fbd1aa9f0b2387, type: 3}
+  - {fileID: 3436384952035452357, guid: bacbfcc701fc884439fbd1aa9f0b2387, type: 3}
   invadersSpacing: 2.25
+  prefabsCount: 0
+  waves:
+  - rows: 1
+    columns: 1
+  wave:
+    rows: 1
+    columns: 1
+  timeBetweenWaves: 5
+  waveCountdown: 0
 --- !u!4 &309165225
 Transform:
   m_ObjectHideFlags: 0
@@ -389,7 +394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781733647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -12.57, z: 0}
+  m_LocalPosition: {x: 0, y: -13.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -545,8 +550,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632734696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.3391, y: -0.1132, z: 0}
-  m_LocalScale: {x: 4.75565, y: 13.266001, z: 1}
+  m_LocalPosition: {x: -21.3391, y: -0.0288, z: 0}
+  m_LocalScale: {x: 4.75565, y: 13.341617, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -713,8 +718,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077573276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.3391, y: -0.1132, z: 0}
-  m_LocalScale: {x: 4.75565, y: 13.266001, z: 1}
+  m_LocalPosition: {x: 21.3391, y: -0.0016, z: 0}
+  m_LocalScale: {x: 4.75565, y: 13.365497, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

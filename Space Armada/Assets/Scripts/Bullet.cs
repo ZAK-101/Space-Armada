@@ -17,10 +17,27 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         //destroying the bullets
-        if (transform.position.y > 10f)
+        if (transform.position.y > 15f)
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Invaders invader = other.GetComponent<Invaders>();
+            if (invader != null)
+            {
+                invader.destroySelf();
+            }
+
+
+            Destroy(gameObject);
+        }
+        
+        
     }
 
 }
