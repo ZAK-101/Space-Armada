@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int livesLeft;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        livesLeft = 1;
+        GameUI.instance.setLivesText(livesLeft);
     }
 
     // Update is called once per frame

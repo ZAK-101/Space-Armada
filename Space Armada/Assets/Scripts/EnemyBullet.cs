@@ -27,8 +27,11 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            Destroy(player);
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            player.livesLeft--;
+            GameUI.instance.setLivesText(player.livesLeft);
+            Destroy(playerObj);
             Destroy(gameObject);
         }
 

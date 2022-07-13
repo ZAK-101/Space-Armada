@@ -48,7 +48,7 @@ public class Invader: MonoBehaviour
 
     public int amountKilled;
     public int enemiesLeft;
-   
+    public int waveValue;
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +62,7 @@ public class Invader: MonoBehaviour
         downBounds = -3f;
         fireDelay = 1f;
         amountKilled = 0;
-        
+        waveValue = 0;
     }
 
     // Update is called once per frame
@@ -225,6 +225,10 @@ public class Invader: MonoBehaviour
     {
         // used for instantiating the different types of enemies
         prefabsCount = 0;
+
+        waveValue++;
+        GameUI.instance.setWavesText(waveValue);
+
         enemiesLeft = wave.rows * wave.columns;
         GameUI.instance.setEnemiesLeftText(enemiesLeft);
 
