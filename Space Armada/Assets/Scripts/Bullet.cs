@@ -27,10 +27,15 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Invaders invader = other.GetComponent<Invaders>();
+            InvaderHealth invader = other.GetComponent<InvaderHealth>();
+            Invader invaderAmount = GameObject.FindGameObjectWithTag("invaderManager").GetComponent<Invader>();
             if (invader != null)
             {
                 invader.destroySelf();
+                invaderAmount.amountKilled++;
+                invaderAmount.enemiesLeft--;
+                GameUI.instance.setEnemiesLeftText(invaderAmount.enemiesLeft);
+                GameUI.instance.setScoreText(invaderAmount.amountKilled);
             }
 
 

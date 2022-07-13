@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     Weapon weapon;
     public GameObject weaponObj;
 
+    public float fireDelay;
+
     public void Awake()
     {
         weapon = weaponObj.GetComponent<Weapon>();
@@ -19,17 +21,26 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        fireDelay = 0.75f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //the player shoots if the space key is down/pressed
-        if (Input.GetKeyDown("space"))
+        fireDelay -= Time.deltaTime;
+        if (fireDelay <= 0f)
         {
-            weapon.shoot();
-            
+            fireDelay = 0f;
+
+            //the player shoots if the space key is down/pressed
+            if (Input.GetKeyDown("space"))
+            {
+
+               fireDelay = 0.75f;
+               weapon.shoot();
+            }
         }
+      
     }
 
     private void FixedUpdate()

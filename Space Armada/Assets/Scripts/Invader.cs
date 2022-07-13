@@ -16,9 +16,9 @@ public enum spawnState
     COUNTING
 }
 
-public class Gameplay : MonoBehaviour
+public class Invader: MonoBehaviour
 {
-    public static Gameplay instance;
+   
 
     public GameObject[] invaderPrefabs;
 
@@ -28,24 +28,27 @@ public class Gameplay : MonoBehaviour
     public List<Wave> waves;
     public Wave wave;
     private int nextWave = 0;
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves;
     public float waveCountdown;
 
     private float searchCountdown = 1f;
 
+    private Vector3 _direction = Vector3.right;
+    public float speed;
+    public float rightBounds;
+    public float leftBounds;
+    public float downBounds;
+    public float upBounds;
+
     private spawnState state = spawnState.COUNTING;
 
-    private void Awake()
-    {
+    public GameObject bulletPrefab;
 
-        instance = this;
+    public float fireDelay;
 
-    }
-
-    void OnDestroy()
-    {
-        instance = null;
-    }
+    public int amountKilled;
+    public int enemiesLeft;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +56,13 @@ public class Gameplay : MonoBehaviour
         waveCountdown = timeBetweenWaves;
         wave.rows = 1;
         wave.columns = 1;
+        rightBounds = 14.84f;
+        leftBounds = -14.84f;
+        upBounds = 8f;
+        downBounds = -3f;
+        fireDelay = 1f;
+        amountKilled = 0;
+        
     }
 
     // Update is called once per frame
@@ -60,6 +70,7 @@ public class Gameplay : MonoBehaviour
     {
         if (state == spawnState.WAITING)
         {
+            fireDelay -= Time.deltaTime;
             if (!enemyIsAlive())
             {
                 waveCompleted(wave);
@@ -68,8 +79,17 @@ public class Gameplay : MonoBehaviour
 
             else
             {
+                movement();
+                if (fireDelay <= 0)
+                {
+                    fireDelay = 1f;
+                    attack();
+                }
+               
                 return;
             }
+
+
         }
 
         if (waveCountdown <= 0)
@@ -89,12 +109,69 @@ public class Gameplay : MonoBehaviour
         }
     }
 
+    void movement()
+    {
+        gameObject.transform.position += _direction * speed * Time.deltaTime;
+
+        foreach(Transform invader in this.transform)
+        {
+            if (!invader.gameObject.activeInHierarchy)
+            {
+                continue;
+            }
+
+            if (_direction == Vector3.right && invader.position.x >= rightBounds)
+            {
+                moveDownRow();
+            }
+
+            else if (_direction == Vector3.left && invader.position.x <= leftBounds)
+            {
+                moveDownRow();
+            }
+
+        }
+    }
+
+    void attack()
+    {
+        foreach (Transform invader in this.transform)
+        {
+            if (!invader.gameObject.activeInHierarchy)
+            {
+                continue;
+            }
+
+            int rand = Random.Range(1, 101);
+
+            if (rand <= 60) 
+            {
+                Instantiate(bulletPrefab, invader.position, Quaternion.identity); //
+                Debug.Log("bullet instantiated");
+                break;
+            }
+
+        }
+    }
+
+
+    void moveDownRow()
+    {
+        _direction.x *= -1.0f;
+
+        //moving down
+        Vector3 position = gameObject.transform.position;
+        position.y -= 0.5f;
+        gameObject.transform.position = position;
+    }
+
     void waveCompleted(Wave _wave)
     {
         Debug.Log("wave completed");
 
         state = spawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
+        gameObject.transform.localPosition = new Vector3(0, 8, 0);
 
         wave.rows++;
         wave.columns++;
@@ -110,6 +187,8 @@ public class Gameplay : MonoBehaviour
         }
 
         waves.Add(new Wave { rows = wave.rows, columns = wave.columns });
+
+        
 
         nextWave++;
     }
@@ -146,6 +225,8 @@ public class Gameplay : MonoBehaviour
     {
         // used for instantiating the different types of enemies
         prefabsCount = 0;
+        enemiesLeft = wave.rows * wave.columns;
+        GameUI.instance.setEnemiesLeftText(enemiesLeft);
 
         for (int row = 0; row < wave.rows; row++)
         {

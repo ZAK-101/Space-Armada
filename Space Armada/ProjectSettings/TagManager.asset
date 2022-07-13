@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bullets
   - Enemy
+  - invaderManager
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - bullet
+  - enemy
+  - enemybullet
   - 
   - 
   - 
