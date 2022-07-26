@@ -19,7 +19,6 @@ public enum spawnState
 public class Invader: MonoBehaviour
 {
    
-
     public GameObject[] invaderPrefabs;
 
     public float invadersSpacing;

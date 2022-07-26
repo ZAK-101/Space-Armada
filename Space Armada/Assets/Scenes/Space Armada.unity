@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128893934}
   - component: {fileID: 128893933}
+  - component: {fileID: 128893935}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -171,6 +172,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128893935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128893932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75841da52d9614344954c881b513a8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 781733647}
+  invaderParent: {fileID: 309165223}
 --- !u!1 &309165223
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,8 +216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invaderPrefabs:
-  - {fileID: 3436384952035452357, guid: bacbfcc701fc884439fbd1aa9f0b2387, type: 3}
-  - {fileID: 3436384952035452357, guid: bacbfcc701fc884439fbd1aa9f0b2387, type: 3}
+  - {fileID: 4808413170196027635, guid: dfdbf3607a9c15642bfcc0ea7584cac3, type: 3}
+  - {fileID: 7937757405581706072, guid: a096eb83748633547a5653a795344f0d, type: 3}
   - {fileID: 3436384952035452357, guid: bacbfcc701fc884439fbd1aa9f0b2387, type: 3}
   invadersSpacing: 2.25
   prefabsCount: 0
@@ -579,6 +594,7 @@ GameObject:
   - component: {fileID: 781733655}
   - component: {fileID: 781733654}
   - component: {fileID: 781733656}
+  - component: {fileID: 781733658}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -728,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6e8f96445524347acd621285d81fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesLeft: 0
+  health: {fileID: 781733658}
 --- !u!114 &781733656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +816,20 @@ PolygonCollider2D:
       - {x: 0.35958982, y: -0.9084375}
       - {x: 1.0219921, y: -1.0219921}
       - {x: 1.0598437, y: -0.9841406}
+--- !u!114 &781733658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781733647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1eaf5adbe326a499526e092906aec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  currentHealth: 1
 --- !u!1 &1021962363
 GameObject:
   m_ObjectHideFlags: 0
