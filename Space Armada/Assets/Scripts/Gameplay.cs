@@ -10,8 +10,10 @@ public class Gameplay : MonoBehaviour
     Player player;
     public GameObject player1;
 
-    Invader invader;
+    public Invader invader;
     public GameObject invaderParent;
+
+    public GameOver gameOver;
 
     private void Awake()
     {
@@ -63,6 +65,15 @@ public class Gameplay : MonoBehaviour
     public void playerDeath()
     {
         Destroy(player1);
+        StartCoroutine(showGameOver());
+        
+    }
+
+    IEnumerator showGameOver()
+    { 
+        yield return new WaitForSeconds(1f);
+
+        gameOver.setup(invader.amountKilled);
     }
 
 
