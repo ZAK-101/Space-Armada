@@ -49,8 +49,6 @@ public class Invader: MonoBehaviour
     public int enemiesLeft;
     public int waveValue;
 
-    public int totalAmountKilled { get { return amountKilled; } }
-
     // Start is called before the first frame update
     void Start()
     {
