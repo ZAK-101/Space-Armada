@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8670671395568358732, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8670671395568358732, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
+      propertyPath: currentHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2775808244976515230, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
       propertyPath: m_Radius
       value: 1.0773762

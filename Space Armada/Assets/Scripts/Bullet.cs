@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb2d;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -27,15 +28,21 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            InvaderHealth invader = other.GetComponent<InvaderHealth>();
+            Health invader = other.GetComponent<Health>();
             Invader invaderAmount = GameObject.FindGameObjectWithTag("invaderManager").GetComponent<Invader>();
             if (invader != null)
             {
-                invader.destroySelf();
-                invaderAmount.amountKilled++;
-                invaderAmount.enemiesLeft--;
-                GameUI.instance.setEnemiesLeftText(invaderAmount.enemiesLeft);
-                GameUI.instance.setScoreText(invaderAmount.amountKilled);
+                invader.takeDamage(damage);
+
+                if (invader.currentHealth <= 0)
+                {
+                    invaderAmount.amountKilled++;
+                    invaderAmount.enemiesLeft--;
+                    GameUI.instance.setEnemiesLeftText(invaderAmount.enemiesLeft);
+                    GameUI.instance.setScoreText(invaderAmount.amountKilled);
+                }
+               
+              
             }
 
 
