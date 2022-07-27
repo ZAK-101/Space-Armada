@@ -49,14 +49,15 @@ public class Invader: MonoBehaviour
     public int enemiesLeft;
     public int waveValue;
 
+
     // Start is called before the first frame update
     void Start()
     {
         waveCountdown = timeBetweenWaves;
         wave.rows = 1;
         wave.columns = 1;
-        rightBounds = 14.84f;
-        leftBounds = -14.84f;
+        rightBounds = 13.85f;
+        leftBounds = -13.85f;
         upBounds = 8f;
         downBounds = -3f;
         fireDelay = 1f;

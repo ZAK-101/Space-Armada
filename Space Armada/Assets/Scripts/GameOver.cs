@@ -7,9 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public TextMeshProUGUI finalScoreTxt;
+    public GameObject canvas;
+    Canvas canvasRenderer;
 
     public void setup(int score)
     {
+        canvasRenderer = canvas.GetComponent<Canvas>();
+        canvasRenderer.sortingLayerID = SortingLayer.NameToID("gameOver");
         gameObject.SetActive(true);
         finalScoreTxt.text = score.ToString() + " POINTS";
     }

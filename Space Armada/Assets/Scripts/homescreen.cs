@@ -5,9 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class homescreen : MonoBehaviour
 {
-    public void loadNextScene()
+    public void loadPlayScene()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void loadTutorialScene()
+    {
+        SceneManager.LoadScene(2);
+    }
+    
+    public void exitGame()
+    {
+        Debug.Log("QUIT");
+        Application.Quit();
     }
 
 }
