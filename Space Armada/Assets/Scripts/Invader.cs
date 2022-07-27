@@ -146,9 +146,17 @@ public class Invader: MonoBehaviour
 
             if (rand <= 60) 
             {
-                Instantiate(bulletPrefab, invader.position, Quaternion.identity); //
+                if (invader.gameObject.)
+                {
+                    Instantiate(bulletPrefab, invader.position, Quaternion.identity);
+                    Debug.Log("bullet instantiated");
+                    break;
+                }
+
+                Instantiate(bulletPrefab, invader.position, Quaternion.identity);
                 Debug.Log("bullet instantiated");
                 break;
+
             }
 
         }
