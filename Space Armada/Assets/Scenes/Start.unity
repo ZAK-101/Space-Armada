@@ -400,7 +400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TUTORIAL
+  m_text: How to play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a0410b3a74d3a946adee65559eb419f, type: 2}
   m_sharedMaterial: {fileID: -8117401907047383875, guid: 3a0410b3a74d3a946adee65559eb419f, type: 2}
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 1179056485}
   - component: {fileID: 1179056484}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Play Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 1349703149}
   - component: {fileID: 1349703148}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: How to play Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 1852834737}
   - component: {fileID: 1852834736}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
