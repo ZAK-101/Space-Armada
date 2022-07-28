@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8670671395568358732, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8670671395568358732, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
+      propertyPath: currentHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2775808244976515230, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
       propertyPath: m_Radius
       value: 1.0773762
@@ -39,6 +47,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 70d9d4d5468c0d9458cef1bb91d7e42f, type: 3}
+    - target: {fileID: 6213844921552868279, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213844921552868279, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213844921552868279, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 747635353
+      objectReference: {fileID: 0}
     - target: {fileID: 6213844921552868279, guid: 920ca8557f9ddaa44aec156572d82114, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

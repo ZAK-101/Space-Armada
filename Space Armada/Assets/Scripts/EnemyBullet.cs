@@ -6,6 +6,7 @@ public class EnemyBullet : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb2d;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,10 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            player.livesLeft--;
-            GameUI.instance.setLivesText(player.livesLeft);
-            Destroy(playerObj);
+            //GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+            player.takeDamage(damage);
+            GameUI.instance.setLivesText(player.currentHealth);
             Destroy(gameObject);
         }
 

@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - bullets
-  - Enemy
   - invaderManager
+  - Enemy-1
+  - Enemy-2
+  - Enemy-3
   layers:
   - Default
   - TransparentFX
@@ -43,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: top
+    uniqueID: 747635353
+    locked: 0
+  - name: gameOver
+    uniqueID: 2744276687
     locked: 0
