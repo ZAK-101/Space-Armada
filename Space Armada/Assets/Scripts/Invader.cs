@@ -41,7 +41,7 @@ public class Invader: MonoBehaviour
 
     private spawnState state = spawnState.COUNTING;
 
-    public GameObject bulletPrefab;
+    public GameObject[] bulletPrefab;
 
     public float fireDelay;
 
@@ -60,7 +60,7 @@ public class Invader: MonoBehaviour
         leftBounds = -13.85f;
         upBounds = 8f;
         downBounds = -3f;
-        fireDelay = 1f;
+        fireDelay = 0.2f;
         amountKilled = 0;
         waveValue = 0;
     }
@@ -142,22 +142,40 @@ public class Invader: MonoBehaviour
                 continue;
             }
 
-            int rand = Random.Range(1, 101);
+            int randGreenInvaderShoot = Random.Range(1, 101);
+            int randBlueInvaderShoot = Random.Range(1, 101);
+            int randPinkInvaderShoot = Random.Range(1, 101);
 
-            if (rand <= 60) 
+            if (randGreenInvaderShoot <= 40) 
             {
-                /*if (invader.gameObject.)
-                {
-                    Instantiate(bulletPrefab, invader.position, Quaternion.identity);
-                    Debug.Log("bullet instantiated");
-                    break;
-                }*/
 
-                Instantiate(bulletPrefab, invader.position, Quaternion.identity);
-                Debug.Log("bullet instantiated");
-                break;
+                if (invader.gameObject.name == "Invader_green_1(Clone)")
+                {
+                    Instantiate(bulletPrefab[0], invader.position, Quaternion.identity);
+                    Debug.Log("bullet instantiated");
+                }
 
             }
+
+            if (randBlueInvaderShoot <= 30)
+            {
+                if (invader.gameObject.name == "Invader_blue_1(Clone)")
+                {
+                    Instantiate(bulletPrefab[1], invader.position, Quaternion.identity);
+                    Debug.Log("bullet instantiated");
+                }
+            }
+
+            if (randPinkInvaderShoot <= 20)
+            {
+                if (invader.gameObject.name == "Invader_Chungus_1(Clone)")
+                {
+                    Instantiate(bulletPrefab[2], invader.position, Quaternion.identity);
+                    Debug.Log("bullet instantiated");
+                }
+            }
+
+
 
         }
     }

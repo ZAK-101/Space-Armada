@@ -446,7 +446,10 @@ MonoBehaviour:
   leftBounds: 0
   downBounds: 0
   upBounds: 0
-  bulletPrefab: {fileID: 4942021398554904917, guid: fec640e368d14294590d995be341ac92, type: 3}
+  bulletPrefab:
+  - {fileID: 4942021398554904917, guid: fec640e368d14294590d995be341ac92, type: 3}
+  - {fileID: 4448691356169682046, guid: 6d952635026dc49408e5c082f22a2928, type: 3}
+  - {fileID: 3579768539609465848, guid: 0f769e9005831184c889b85551e3d4b8, type: 3}
   fireDelay: 0
   amountKilled: 0
   enemiesLeft: 0

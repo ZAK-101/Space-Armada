@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
             fireDelay = 0f;
 
             //the player shoots if the space key is down/pressed
-            if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown("space"))
             {
 
                fireDelay = 0.75f;
