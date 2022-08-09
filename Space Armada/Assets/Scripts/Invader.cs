@@ -60,7 +60,7 @@ public class Invader: MonoBehaviour
         leftBounds = -13.85f;
         upBounds = 8f;
         downBounds = -3f;
-        fireDelay = 0.2f;
+        fireDelay = 1.5f;
         amountKilled = 0;
         waveValue = 0;
     }
@@ -82,7 +82,7 @@ public class Invader: MonoBehaviour
                 movement();
                 if (fireDelay <= 0)
                 {
-                    fireDelay = 1f;
+                    fireDelay = 1.5f;
                     attack();
                 }
                
@@ -146,7 +146,7 @@ public class Invader: MonoBehaviour
             int randBlueInvaderShoot = Random.Range(1, 101);
             int randPinkInvaderShoot = Random.Range(1, 101);
 
-            if (randGreenInvaderShoot <= 40) 
+            if (randGreenInvaderShoot <= 30) 
             {
 
                 if (invader.gameObject.name == "Invader_green_1(Clone)")
@@ -157,7 +157,7 @@ public class Invader: MonoBehaviour
 
             }
 
-            if (randBlueInvaderShoot <= 30)
+            if (randBlueInvaderShoot <= 20)
             {
                 if (invader.gameObject.name == "Invader_blue_1(Clone)")
                 {
@@ -166,7 +166,7 @@ public class Invader: MonoBehaviour
                 }
             }
 
-            if (randPinkInvaderShoot <= 20)
+            if (randPinkInvaderShoot <= 10)
             {
                 if (invader.gameObject.name == "Invader_Chungus_1(Clone)")
                 {

@@ -732,8 +732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -92}
-  m_SizeDelta: {x: 505.5818, y: 120.6048}
+  m_AnchoredPosition: {x: 8, y: -90.56998}
+  m_SizeDelta: {x: 505.5818, y: 134.1097}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404008334
 MonoBehaviour:
@@ -1085,8 +1085,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9991, y: 0.3324}
-  m_SizeDelta: {x: 460.3211, y: 102.3485}
+  m_AnchoredPosition: {x: 2.9991, y: 1.2195}
+  m_SizeDelta: {x: 460.3211, y: 118.3157}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1673675878
 MonoBehaviour:
@@ -1113,7 +1113,8 @@ MonoBehaviour:
     Fire power-up (middle icon) enables the player to spam their shots for a limited
     time. Third, the Add Life power-up (right icon) adds one life to the player;
     only three lives can be obtained. The effect of each power-up is automatically
-    enabled once the player collides with the pickup.
+    enabled once the player collides with the pickup. And the pickup is spawned at
+    a random location with random intervals.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a0410b3a74d3a946adee65559eb419f, type: 2}
   m_sharedMaterial: {fileID: -8117401907047383875, guid: 3a0410b3a74d3a946adee65559eb419f, type: 2}
@@ -1150,7 +1151,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 1.05
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 40
   m_lineSpacingMax: 0
