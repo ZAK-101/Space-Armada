@@ -15,6 +15,14 @@ public class Gameplay : MonoBehaviour
 
     public GameOver gameOver;
 
+    public Pause pause;
+    public GameObject pauseObj;
+
+    public GameObject[] pickups;
+
+    Camera cam;
+    Vector2 camBounds;
+
     private void Awake()
     {
         player = player1.GetComponent<Player>();
@@ -30,12 +38,36 @@ public class Gameplay : MonoBehaviour
     {
         player.health.onDeath += playerDeath;
 
+        cam = Camera.main;
+        camBounds = cam.ScreenToWorldPoint(Vector2.zero);
+
+        InvokeRepeating("spawnPickups", 3f, 5f);
+
         StartCoroutine(getChildHealthComponent());
     }
 
     private void Update()
     {
       
+    }
+
+    private void spawnPickups()
+    {
+        int randomPickup = Random.Range(0, 3);
+
+        for (int i = 0; i < pickups.Length; i++)
+        {
+           if (i == randomPickup)
+           {
+                Instantiate(pickups[i], camBounds * Vector2.down + new Vector2(Random.Range(-12.5f, 12.5f), 0), Quaternion.identity);
+                break;
+           }
+
+           else
+           {
+                continue;
+           }
+        }
     }
 
     IEnumerator getChildHealthComponent()
@@ -72,8 +104,13 @@ public class Gameplay : MonoBehaviour
     IEnumerator showGameOver()
     { 
         yield return new WaitForSeconds(1f);
-
+        pauseObj.SetActive(false);
         gameOver.setup(invader.amountKilled);
+    }
+
+    public void pauseSelect()
+    {
+        pause.pauseGame();
     }
 
 

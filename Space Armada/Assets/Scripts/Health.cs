@@ -25,6 +25,14 @@ public class Health : MonoBehaviour
         
     }
 
+    public void incrementLife(int value)
+    {
+        currentHealth += value;
+        
+        if (currentHealth >= maxHealth)
+            currentHealth = maxHealth;
+    }
+
     public void takeDamage(int value)
     {
         if (currentHealth <= 0)

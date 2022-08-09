@@ -9,6 +9,7 @@ TagManager:
   - Enemy-1
   - Enemy-2
   - Enemy-3
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - bullet
   - enemy
   - enemybullet
-  - 
+  - pickups
   - 
   - 
   - 
@@ -49,6 +50,9 @@ TagManager:
   - name: top
     uniqueID: 747635353
     locked: 0
-  - name: gameOver
+  - name: menu
     uniqueID: 2744276687
+    locked: 0
+  - name: gameOver
+    uniqueID: 3088265991
     locked: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class homescreen : MonoBehaviour
+public class menuController : MonoBehaviour
 {
     public void loadPlayScene()
     {

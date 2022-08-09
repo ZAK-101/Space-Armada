@@ -4,24 +4,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     private Rigidbody2D rb2d;
     private float moveInput;
     public float speed;
 
-    Weapon weapon;
+    public Weapon weapon;
     public GameObject weaponObj;
 
     public float fireDelay;
+    public float timer;
 
     public void Awake()
     {
         weapon = weaponObj.GetComponent<Weapon>();
+        instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
     }
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         fireDelay = 0.75f;
+        timer = 0.75f;
     }
 
     // Update is called once per frame
@@ -36,7 +46,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown("space"))
             {
 
-               fireDelay = 0.75f;
+               fireDelay = timer;
                weapon.shoot();
             }
         }

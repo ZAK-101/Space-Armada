@@ -105,7 +105,7 @@ public class Invader: MonoBehaviour
         else
         {
             waveCountdown -= Time.deltaTime;
-            Debug.Log(waveCountdown);
+            
         }
     }
 
