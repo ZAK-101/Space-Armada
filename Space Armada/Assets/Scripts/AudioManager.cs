@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public enum sfxAudio
 {
     sfx_boom_edited,
+    sfx_boom_edited_new,
+    sfx_boom_edited_new_2,
     sfx_laser_edited,
     sfx_ting_edited
 
@@ -57,6 +59,7 @@ public class AudioManager : MonoBehaviour
         {
             source.clip = bgMusic[0];
             source.Play();
+            
 
         }
 

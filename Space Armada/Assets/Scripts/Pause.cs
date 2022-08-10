@@ -14,6 +14,7 @@ public class Pause : MonoBehaviour
         canvasRenderer = canvas.GetComponent<Canvas>();
         canvasRenderer.sortingLayerID = SortingLayer.NameToID("menu");
         gameObject.SetActive(true);
+        AudioManager.instance.source.Pause();
         Time.timeScale = 0f;
         
     }
@@ -23,6 +24,7 @@ public class Pause : MonoBehaviour
         canvasRenderer = canvas.GetComponent<Canvas>();
         canvasRenderer.sortingLayerID = SortingLayer.NameToID("Default");
         gameObject.SetActive(false);
+        AudioManager.instance.source.Play();
         Time.timeScale = 1f;
         
     }

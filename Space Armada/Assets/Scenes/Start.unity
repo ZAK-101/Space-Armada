@@ -1532,7 +1532,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 1979308429}
   bgMusic:
-  - {fileID: 8300000, guid: 73ad7c0ea79754647b6622fc70958d00, type: 3}
+  - {fileID: 8300000, guid: 1e10c8b301462d4469a5630f340cfef5, type: 3}
   - {fileID: 8300000, guid: ffe76e0a59d7ec44bb73281450431fe1, type: 3}
-  isBgTwoCurrentlyPlaying: 0
-  isBgOneCurrentlyPlaying: 0
