@@ -40,6 +40,11 @@ public class Bullet : MonoBehaviour
 
                     invaderAmount.amountKilled++;
                     invaderAmount.enemiesLeft--;
+
+                    if (invaderAmount.enemiesLeft <= 0)
+                    {
+                        invaderAmount.enemiesLeft = 0;
+                    }
                    
                     GameUI.instance.setEnemiesLeftText(invaderAmount.enemiesLeft);
                     GameUI.instance.setScoreText(invaderAmount.amountKilled);
