@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
 
                 if (invader.currentHealth <= 0)
                 {
-                    AudioManager.instance.playSound(sfxAudio.sfx_boom);
+                    AudioManager.instance.playSound(sfxAudio.sfx_boom_edited);
 
                     invaderAmount.amountKilled++;
                     invaderAmount.enemiesLeft--;

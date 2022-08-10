@@ -44,6 +44,8 @@ public class Gameplay : MonoBehaviour
         InvokeRepeating("spawnPickups", 3f, 5f);
 
         StartCoroutine(getChildHealthComponent());
+
+       
     }
 
     private void Update()

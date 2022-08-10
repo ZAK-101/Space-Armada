@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
 
     public void shoot()
     {
-        AudioManager.instance.playSound(sfxAudio.sfx_laser);
+        AudioManager.instance.playSound(sfxAudio.sfx_laser_edited);
 
         if (isAddGunActive == true)
         {

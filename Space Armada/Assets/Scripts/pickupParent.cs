@@ -60,7 +60,7 @@ public class pickupParent : MonoBehaviour
             }
         }
 
-        AudioManager.instance.playSound(sfxAudio.sfx_ting);
+        AudioManager.instance.playSound(sfxAudio.sfx_ting_edited);
         //disabling the sprite renderer and its collider
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Collider2D>().enabled = false;

@@ -561,6 +561,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &671437596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671437598}
+  - component: {fileID: 671437597}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &671437597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671437596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dcc77719e56fe40955dafa344310de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &671437598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671437596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 54.164864, y: 76.985435, z: -12.600215}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &999822856
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,8 +765,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1979308427}
-        m_TargetAssemblyTypeName: homescreen, Assembly-CSharp
+      - m_Target: {fileID: 671437597}
+        m_TargetAssemblyTypeName: menuController, Assembly-CSharp
         m_MethodName: loadPlayScene
         m_Mode: 1
         m_Arguments:
@@ -855,8 +899,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1979308427}
-        m_TargetAssemblyTypeName: homescreen, Assembly-CSharp
+      - m_Target: {fileID: 671437597}
+        m_TargetAssemblyTypeName: menuController, Assembly-CSharp
         m_MethodName: loadTutorialScene
         m_Mode: 1
         m_Arguments:
@@ -1295,8 +1339,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1979308427}
-        m_TargetAssemblyTypeName: homescreen, Assembly-CSharp
+      - m_Target: {fileID: 671437597}
+        m_TargetAssemblyTypeName: menuController, Assembly-CSharp
         m_MethodName: exitGame
         m_Mode: 1
         m_Arguments:
@@ -1354,27 +1398,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1979308428}
-  - component: {fileID: 1979308427}
   - component: {fileID: 1979308429}
+  - component: {fileID: 1979308430}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1979308427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979308426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2dcc77719e56fe40955dafa344310de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1979308428
 Transform:
   m_ObjectHideFlags: 0
@@ -1400,7 +1432,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ffe76e0a59d7ec44bb73281450431fe1, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1486,3 +1518,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1979308430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979308426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66347e474bddbb441bb7197c4f95ce7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1979308429}
+  bgMusic:
+  - {fileID: 8300000, guid: 73ad7c0ea79754647b6622fc70958d00, type: 3}
+  - {fileID: 8300000, guid: ffe76e0a59d7ec44bb73281450431fe1, type: 3}
+  isBgTwoCurrentlyPlaying: 0
+  isBgOneCurrentlyPlaying: 0
