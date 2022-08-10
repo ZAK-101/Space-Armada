@@ -5,36 +5,31 @@ using UnityEngine;
 public class Background : MonoBehaviour
 {
 
-    private float height;
+   
     public float moveSpeed;
 
     RectTransform rectTransform;
 
+    public Vector3 startPos;
+
     // Start is called before the first frame update
     void Start()
     {
-        height = 80f;
+        
         rectTransform = gameObject.GetComponent<RectTransform>();
+        startPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-        
+        transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
 
-        if (rectTransform.offsetMin.y < -2000f)
+
+        if (rectTransform.offsetMin.y < -5523.966f) //-2742.148, -2000, -4797.888f
         {
-            //Debug.Log("Gumagana");
-            reposition();
-
+            transform.position = startPos;
         }
     }
 
-    private void reposition()
-    {
-
-        Vector2 vector = new Vector2(0, height);
-        gameObject.transform.position = (Vector2)transform.position + vector;
-    }
 }
