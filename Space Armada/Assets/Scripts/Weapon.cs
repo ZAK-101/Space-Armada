@@ -20,6 +20,8 @@ public class Weapon : MonoBehaviour
 
     public void shoot()
     {
+        AudioManager.instance.playSound(sfxAudio.sfx_laser);
+
         if (isAddGunActive == true)
         {
             Instantiate(bulletPrefab, firingPoint2.position, firingPoint2.rotation);
